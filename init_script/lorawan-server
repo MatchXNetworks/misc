@@ -1,0 +1,10 @@
+#!/bin/sh /etc/rc.common
+START=10
+STOP=15
+	start() {
+	/root/lorawan-server/bin/lorawan-server > /dev/null 2>&1 &
+}
+
+	stop() {
+	killall -9 lorawan-server epmd beam
+	}
