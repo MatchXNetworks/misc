@@ -224,6 +224,18 @@ $(call Package/erlang/Default/description)
  syntax trees.
 endef
 
+define Package/erlang-public-key
+$(call Package/erlang/Default)
+  TITLE:=API to public key infrastructure.
+  VERSION:=1.3
+  DEPENDS+= +erlang
+endef
+
+define Package/erlang-public-key/description
+$(call Package/erlang/Default/description)
+ .
+ This Erlang/OTP package provides API to public key infrastructure.
+endef
 
 # Host
 
@@ -334,3 +346,4 @@ $(eval $(call BuildModule,snmp,snmp))
 $(eval $(call BuildModule,ssh,ssh))
 $(eval $(call BuildModule,ssl,ssl))
 $(eval $(call BuildModule,syntax-tools,syntax_tools))
+$(eval $(call BuildModule,public-key,public_key))
